@@ -1,7 +1,6 @@
 <?php
+session_start();
 include '../common/header.php';
-
-
-include '../common/footer.php';
-
+unset($_SESSION['userID']);
+header('location:login.php');
 ?>

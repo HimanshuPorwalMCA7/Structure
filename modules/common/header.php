@@ -1,8 +1,8 @@
 <?php
+
 include '../../core/constants.php';
-
+include '../../core/helper.php';
 ?>
-
 <a href="/modules/dashboard">
     Dashboard
 </a>
