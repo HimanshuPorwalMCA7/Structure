@@ -65,4 +65,8 @@ class DBController {
         // Fetch all rows from the prepared statement
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function rowCount($stmt){
+        return $stmt->rowCount();
+    }
 }

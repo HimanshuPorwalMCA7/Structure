@@ -1,6 +1,12 @@
 <?php
-session_start();
+//session_start();
 include '../common/header.php';
+
+if(isLogin())
+{
+    header('location:/modules/dashboard');
+}
+
 
 ?>
 
@@ -17,6 +23,8 @@ include '../common/header.php';
         ?>
     </div>
 </form>
+
+<a href="register.php"> Create New User</a>
 
 <?php
 include '../common/footer.php';

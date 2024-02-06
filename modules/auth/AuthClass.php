@@ -17,11 +17,10 @@
             if(!empty($users)){
                 $this->user = [
                         'id'=> $users[0]['id'],
-                        'firstname'=> $users[0]['firstname'],
-                        'lastname'=> $users[0]['lastname'],
+                        'first_name'=> $users[0]['first_name'],
+                        'last_name'=> $users[0]['last_name'],
                         'email'=> $users[0]['email'],
-                        
-                        
+                        'status' => $users[0]['status']
                 ];
             }
         }
@@ -33,6 +32,8 @@
         public function getCurrentUser(){
             return $this->user;
         }
+
+        
     }
 
    

@@ -3,6 +3,7 @@ session_start();
 include_once '../../core/constants.php';
 include_once '../../core/helper.php';
 include_once './AuthClass.php';
+include_once './UserClass.php';
 if(empty($_POST))
 {
     die('Empty Request not access directly and only Post is work');
@@ -30,5 +31,22 @@ if($_action == "process_login"){
     
         $authObject->createSession();
         header('location:/modules/dashboard');
+}
+else if($_action == "process_register"){
+    $userObject = new UserClass();
+    $email =$_POST['email'];
+
+    $user=$userObject->getUserByEmail($email);
+
+    if(!empty($user))
+    {
+        header('location:/modules/auth/register.php?err=Hey'.$email.'already exist');
+        exit;
+    }
+    $stmt = $userObject->createUser($_POST);
+    if($userObject->rowCount($stmt))
+    {
+        header('location:/modules/auth/register.php?msg=Hey'.$_POST['full_name'].'your Account is successfully created but it login after approval');
+    }
 }
 ?>
