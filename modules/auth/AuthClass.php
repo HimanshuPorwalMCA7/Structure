@@ -20,7 +20,8 @@
                         'first_name'=> $users[0]['first_name'],
                         'last_name'=> $users[0]['last_name'],
                         'email'=> $users[0]['email'],
-                        'status' => $users[0]['status']
+                        'status' => $users[0]['status'],
+                        'stage'=>$users[0]['stage']
                 ];
             }
         }

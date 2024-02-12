@@ -46,6 +46,7 @@ class DBController {
         // Execute the prepared statement with parameters
         $stmt->execute($params);
         // Return the statement object
+        
         return $stmt;
     }
 
